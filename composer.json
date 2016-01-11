@@ -1,0 +1,5 @@
+{
+    "require": {
+        "zumba/json-serializer": "^1.0"
+    }
+}
