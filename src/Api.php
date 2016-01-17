@@ -33,6 +33,7 @@ class Api {
   private static function getParams() {
     $ret = [];
     $json = json_decode(@file_get_contents('php://input'), true);
+    echo json_encode($json);
     foreach ($json['params'] as $paramName => $paramValue) {
       $_POST[$paramName] = $paramValue;
     }
@@ -40,25 +41,29 @@ class Api {
       $ret['args'][$paramName] = $paramValue;
     }
 
-    $ret['className'] = $json['className'];
-    $ret['functionName'] = $json['functionName'];
+    $ret['className'] = $json['method']['className'];
+    $ret['functionName'] = $json['method']['functionName'];
     return $ret;
   }
 
   private function callFunction($params) {
-    self::includeClasses();
+    $this->includeClasses();
     $args = [];
     foreach ($params['args'] as $className => $json) {
-      array_push($args, $this->serializer->serialize($json));
+      array_push($args, $this->serializer->unserialize($json));
     }
+
     call_user_func_array([$params['className'], $params['functionName']], $args);
   }
 
-  private static function includeClasses() {
-    foreach ($classes as $className => $classInfo) {
+  private function includeClasses() {
+    foreach ($this->classes as $className => $classInfo) {
       include_once $classInfo['location'];
     }
   }
 }
+
+$api = new Api();
+$api->handleRequest();
 
 ?>

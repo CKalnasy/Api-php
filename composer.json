@@ -1,5 +1,11 @@
 {
-    "require": {
-        "zumba/json-serializer": "^1.0"
+  "name": "ckalnasy/Api-php",
+  "autoload": {
+    "psr-0" : {
+      "ckalnasy\\Api" : "src/"
     }
+  },
+  "require": {
+    "zumba/json-serializer": "^1.0"
+  }
 }

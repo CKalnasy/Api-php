@@ -1,0 +1,10 @@
+{
+  "Classes" : {
+    "TestClass" : {
+      "location" : "TestClass.php"
+    },
+    "CLLocationCoordinate2D" : {
+      "location" : "Location.php"
+    },
+  }
+}
