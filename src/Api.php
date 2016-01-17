@@ -63,7 +63,4 @@ class Api {
   }
 }
 
-$api = new Api();
-$api->handleRequest();
-
 ?>
