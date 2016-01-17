@@ -3,6 +3,9 @@
 require_once 'vendor/autoload.php';
 use Zumba\Util\JsonSerializer;
 
+
+namespace ckalnasy;
+
 /**
  *
  */
