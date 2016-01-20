@@ -1,5 +1,5 @@
 {
-  "name": "ckalnasy/Api-php",
+  "name": "ckalnasy/api-php",
   "description": "Handle HTTP request that calls a specified static class function given serialzed objects as parameters in the request",
   "keywords": ["api", "serialize", "deserialize", "function"],
   "homepage": "https://github.com/ckalnasy/Api-php",
