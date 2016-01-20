@@ -3,19 +3,15 @@
 require_once 'vendor/autoload.php';
 use Zumba\Util\JsonSerializer;
 
-
 namespace ckalnasy;
 
 /**
- *
+ * This class handles http requests and deserializes the parameters for functions it should call
  */
 class Api {
   private $classes;
   private $serializer;
 
-  /**
-   *
-   */
   public function __construct() {
     $jsonFile = 'api.json';
     if (file_exists($jsonFile)) {
@@ -27,7 +23,7 @@ class Api {
   }
 
   /**
-   *
+   * Handle the request we've just been given. Deserialize the parameters and pass them as parameters to the static class function
    */
   public function handleRequest() {
     $this->callFunction(self::getParams());

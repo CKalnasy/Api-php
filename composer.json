@@ -1,11 +1,17 @@
 {
   "name": "ckalnasy/Api-php",
+  "description": "Handle HTTP request that calls a specified static class function given serialzed objects as parameters in the request",
+  "keywords": ["api", "serialize", "deserialize", "function"],
+  "homepage": "https://github.com/ckalnasy/Api-php",
+  "license": "MIT",
+  "type": "library",
   "autoload": {
     "psr-0" : {
-      "ckalnasy\\Api" : "src/"
+      "ckalnasy\\" : "src/Api"
     }
   },
   "require": {
+    "php": ">= 5.4.0",
     "zumba/json-serializer": "^1.0"
   }
 }
