@@ -1,7 +1,8 @@
 <?php
+namespace ckalnasy\test;
 
-require_once 'vendor/autoload.php';
-use Zumba\Util\JsonSerializer;
+include_once '../Api/Serialize/Serializer.php';
+use ckalnasy\serialize\Serializer;
 
 class TestClass {
   public $string;
@@ -20,9 +21,17 @@ class TestClass {
     $this->set = $set;
   }
 
-  public static function testFunction($testClassObj) {
-    $serializer = new JsonSerializer();
+  public static function testFunctionParams($testClassObj) {
+    $serializer = new Serializer();
     echo $serializer->serialize($testClassObj);
+  }
+
+  public static function testFunctionImage($image) {
+    if ($image) {
+      echo 1;
+    } else {
+      echo 0;
+    }
   }
 }
 

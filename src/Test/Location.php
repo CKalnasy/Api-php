@@ -1,4 +1,5 @@
 <?php
+namespace ckalnasy\test;
 
 class Location {
   public $latitude;

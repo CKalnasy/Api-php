@@ -1,10 +1,12 @@
 {
   "Classes" : {
     "TestClass" : {
-      "location" : "TestClass.php"
+      "location" : "TestClass.php",
+      "namespace" : "ckalnasy\\test\\TestClass"
     },
     "CLLocationCoordinate2D" : {
-      "location" : "Location.php"
-    },
+      "location" : "Location.php",
+      "namespace" : "ckalnasy\\test\\Location"
+    }
   }
 }
