@@ -27,6 +27,13 @@ class Api {
     $this->callFunction($this->getParams());
   }
 
+  /**
+   * Return an object to the client. Pass an array for multiple objects
+   */
+  public function returnObject($obj) {
+    echo $serializer->serialize($obj);
+  }
+
   private function getParams() {
     if (isset($_FILES['file'])) {
       $ret = [];
