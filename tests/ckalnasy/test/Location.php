@@ -10,5 +10,3 @@ class Location {
     $this->longitude = $longitude;
   }
 }
-
-?>

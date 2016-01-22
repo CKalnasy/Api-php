@@ -4,4 +4,3 @@ use ckalnasy\Api;
 
 $api = new Api();
 $api->handleRequest();
-?>
