@@ -1,7 +1,7 @@
 <?php
 namespace ckalnasy;
 
-include_once dirname(dirname(__dir__)) . '/serialize/Serializer.php';
+include_once dirname(dirname(__dir__)) . '/serializer/Serializer.php';
 use serializer\Serializer;
 /**
  * This class handles http requests and deserializes the parameters for functions it should call.
@@ -45,11 +45,15 @@ class Api {
 
     $ret = [];
     $json = json_decode(@file_get_contents('php://input'), true);
-    foreach ($json['params'] as $paramName => $paramValue) {
-      $_POST[$paramName] = $paramValue;
+    if (isset($json['params'])) {
+      foreach ($json['params'] as $paramName => $paramValue) {
+        $_POST[$paramName] = $paramValue;
+      }
     }
-    foreach ($json['args'] as $paramName => $paramValue) {
-      $ret['args'][$paramName] = $paramValue;
+    if (isset($json['args'])) {
+      foreach ($json['args'] as $paramName => $paramValue) {
+        $ret['args'][$paramName] = $paramValue;
+      }
     }
 
     $ret['className'] = $this->getPhpClassName($json['method']['className']);
