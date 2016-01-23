@@ -1,5 +1,5 @@
 <?php
-namespace private;
+namespace private\serializer;
 
 include_once dirname(__dir__) . '/Api.php';
 use ckalnasy\Api;
