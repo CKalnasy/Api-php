@@ -2,7 +2,7 @@
 namespace ckalnasy;
 
 include_once 'Serialize/Serializer.php';
-use ckalnasy\serialize\Serializer;
+use private\Serializer;
 /**
  * This class handles http requests and deserializes the parameters for functions it should call.
  */
