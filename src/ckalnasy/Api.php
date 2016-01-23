@@ -1,8 +1,8 @@
 <?php
 namespace ckalnasy;
 
-include_once dirname(dirname(__dir__)) . 'private/serialize/Serializer.php';
-use private\serializer\Serializer;
+include_once dirname(dirname(__dir__)) . '/serialize/Serializer.php';
+use serializer\Serializer;
 /**
  * This class handles http requests and deserializes the parameters for functions it should call.
  */
