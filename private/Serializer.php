@@ -1,5 +1,5 @@
 <?php
-namespace private\serializer;
+namespace serializer;
 
 include_once dirname(__dir__) . '/Api.php';
 use ckalnasy\Api;
@@ -17,7 +17,7 @@ class Serializer {
   private $classes;
   const CLASS_KEY = JSONSerializer::CLASS_IDENTIFIER_KEY;
 
-  function __construct($classes = null) {
+  public function __construct($classes = null) {
     $this->jsonSerializer = new JSONSerializer();
     if ($classes) {
       $this->classes = $classes;
@@ -31,13 +31,13 @@ class Serializer {
     }
   }
 
-  function serialize($obj) {
+  public function serialize($obj) {
     $ret = json_decode($this->jsonSerializer->serialize($obj), true);
     $ret = $this->convertClassNames($ret);
     return json_encode($ret);
   }
 
-  function unserialize($data) {
+  public function unserialize($data) {
     return $this->jsonSerializer->unserialize($data);
   }
 
@@ -61,5 +61,3 @@ class Serializer {
     return $value;
   }
 }
-
-?>
