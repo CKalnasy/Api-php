@@ -1,9 +1,6 @@
 <?php
 namespace serializer;
 
-include_once dirname(__dir__) . '/src/ckalnasy/Api.php';
-use ckalnasy\Api;
-
 require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 use Zumba\Util\JsonSerializer;
 

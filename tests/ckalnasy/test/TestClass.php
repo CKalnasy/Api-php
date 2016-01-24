@@ -1,8 +1,8 @@
 <?php
 namespace ckalnasy\test;
 
-include_once '../Api/Serialize/Serializer.php';
-use ckalnasy\serialize\Serializer;
+require_once $_SERVER['DOCUMENT_ROOT'] . '/serializer/Serializer.php';
+use serializer\Serializer;
 
 class TestClass {
   public $string;

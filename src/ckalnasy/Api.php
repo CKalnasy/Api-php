@@ -1,7 +1,7 @@
 <?php
 namespace ckalnasy;
 
-include_once dirname(dirname(__dir__)) . '/serializer/Serializer.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/serializer/Serializer.php';
 use serializer\Serializer;
 
 /**
