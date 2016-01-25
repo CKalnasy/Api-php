@@ -8,10 +8,11 @@ use serializer\Serializer;
  * This class handles http requests and deserializes the parameters for functions it should call.
  */
 class Api {
+  private static $instance;
   private $classes;
   private $serializer;
 
-  public function __construct() {
+  private function __construct() {
     $jsonFile = $_SERVER['DOCUMENT_ROOT'] . '/api.json';
     if (file_exists($jsonFile)) {
       $string = file_get_contents($jsonFile);
@@ -19,6 +20,13 @@ class Api {
       $this->classes = $json['Classes'];
     }
     $this->serializer = new Serializer($this->classes);
+  }
+
+  public static function getinstance() {
+    if (null === static::$instance) {
+      static::$instance = new Api();
+    }
+    return static::$instance;
   }
 
   /**
