@@ -32,7 +32,7 @@ class Api {
    * Return an object to the client. Pass an array for multiple objects
    */
   public function returnObject($obj) {
-    echo $serializer->serialize($obj);
+    echo $this->serializer->serialize($obj);
   }
 
   private function getParams() {
